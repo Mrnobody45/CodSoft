@@ -1,0 +1,29 @@
+import random
+import string
+
+length = int(input("Enter password length: "))
+
+print("Choose characters for password")
+print("1. Letters")
+print("2. Digits")
+print("3. Special characters")
+
+choice = int(input("Enter your choice (1/2/3): "))
+
+characters = ""
+
+if choice == 1:
+    characters = string.ascii_letters
+elif choice == 2:
+    characters = string.digits
+elif choice == 3:
+    characters = string.punctuation
+else:
+    print("Invalid choice")
+
+password = ""
+
+for i in range(length):
+    password = password + random.choice(characters)
+
+print("Generated password:", password)
